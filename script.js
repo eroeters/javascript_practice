@@ -17,32 +17,39 @@
 // section.appendChild(para);
 
 
+//add
+
 function add() {
-    let addition = parseInt((document.getElementById("add").value));
-    document.getElementById("addText").innerText = `${addition} + 7 = ` + parseInt(addition + 7);
+    let num = parseFloat((document.getElementById("add").value));
+    if (typeof num === "number") {
+        document.getElementById("addText").innerText = `${num.toFixed(2)} + 7 = ` + parseFloat(num + 7).toFixed(2);
+    } else {
+        document.getElementById("addText").innerText = "Please enter a valid number";
+    }
 }
+
+//multiply  
 
 function multiply() {
     let a = parseInt((document.getElementById("multiplyA").value));
     let b = parseInt((document.getElementById("multiplyB").value));
-    document.getElementById("multText").innerText = `${a} x ${b} = ` + a * b;
+    if (typeof a && b == "number") {
+        document.getElementById("multText").innerText = `${a} x ${b} = ` + a * b;
+    } else {
+    document.getElementById("multText").innerText = "Please enter a valid number";
+    }
 }
 
-//returns last letter of input 
+
+//capitalizes first letter of string input
 
 function capitalize() {
-    // try {
-    //     let firstLetter = string[0].toUpperCase();
-    //     let restOfString = string.slice(1).toLowerCase();
-    //     // return firstLetter + restOfString;
-    //     document.getElementById("input").innerText = firstLetter + restOfString;
-    // } catch (err) {
-
-    // }
 
     let string = document.getElementById("capitalize").value;
     document.getElementById("capText").innerText = string[0].toUpperCase() + string.slice(1).toLowerCase();
 }
+
+//returns last letter of input 
 
 function lastLetter() {
     let string = document.getElementById("lastLetter").value;
